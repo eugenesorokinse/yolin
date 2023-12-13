@@ -53,6 +53,11 @@ DIR_DUP     = mkdir -p $(@D)
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	if [ ! -d "bin" ]; 	\
+	then			\
+		mkdir bin;	\
+	fi	
+
 	$(CC) $(OBJS) -o bin/$(NAME)
 	$(info CREATED $(NAME))
 
