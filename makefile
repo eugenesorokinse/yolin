@@ -1,7 +1,7 @@
 # @author   clemedon (Clément Vidon)
 ####################################### BEG_3 ####
 
-NAME        := test
+NAME        := es-test
 
 #------------------------------------------------#
 #   INGREDIENTS                                  #
@@ -75,6 +75,10 @@ fclean: clean
 re:
 	$(MAKE) fclean
 	$(MAKE) all
+
+install: $(NAME)
+	mkdir -p $(DESTDIR)/$(BINDIR)
+	install -m 0755 bin/$(NAME) $(DESTDIR)/$(BINDIR)
 
 #------------------------------------------------#
 #   SPEC                                         #
