@@ -25,8 +25,8 @@ SRCS        := \
 SRCS        := $(SRCS:%=$(SRC_DIR)/%)
 OBJS        := $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-CC          := gcc
-CFLAGS      := -Wall -Wextra -Werror
+#CC          := gcc
+#CFLAGS      := -Wall -Wextra -Werror
 CPPFLAGS    := -I include
 
 #------------------------------------------------#
@@ -77,8 +77,9 @@ re:
 	$(MAKE) all
 
 install: $(NAME)
-	mkdir -p $(DESTDIR)/$(BINDIR)
+#	mkdir -p $(DESTDIR)/$(BINDIR)
 	install -m 0755 bin/$(NAME) $(DESTDIR)/$(BINDIR)
+#	install -m 0755 bin/$(NAME) /usr/bin
 
 #------------------------------------------------#
 #   SPEC                                         #
@@ -86,6 +87,4 @@ install: $(NAME)
 
 .PHONY: clean fclean re
 .SILENT:
-
-####################################### END_3 ####
 
